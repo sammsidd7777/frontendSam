@@ -626,7 +626,7 @@ justify-content: space-between;
     width: 90%;
     height: 10vw;
     background-size: cover;
-
+    background-color: black;
     margin-bottom: 1vw;
     border-radius: 7px;
 }
