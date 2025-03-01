@@ -61,7 +61,7 @@ const Home = () => {
       <Slider />
  
       <div className='live-sell-section'>
-        <h1>sale is <h1> live</h1></h1>
+        <h1>sale is <h1> live now asdasdasdas</h1></h1>
 
 
        <div className='card-section'>
