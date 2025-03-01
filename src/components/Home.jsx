@@ -18,7 +18,7 @@ const Home = () => {
    
   const fetchData = async () => {
     try {
-      let response = await fetch("http://localhost:5200/products/all");
+      let response = await fetch("https://newstorebackend.vercel.appproducts/all");
     
       // Check if the response is OK (status code 200-299)
       if (response.ok) {
@@ -74,7 +74,7 @@ const Home = () => {
           <Link to={"/productDetail/" + item._id}>
             <div>
               <img
-                src={"http://localhost:5200/images/" + item.productImg[0]}
+                src={"https://newstorebackend.vercel.appimages/" + item.productImg[0]}
                 alt=""
               />
               <h5>{item.productOffer}</h5>
@@ -128,7 +128,7 @@ const Home = () => {
           <Link to={"/productDetail/" + item._id}>
             <div>
               <img
-                src={"http://localhost:5200/images/" + item.productImg[0]}
+                src={"https://newstorebackend.vercel.appimages/" + item.productImg[0]}
                 alt=""
               />
               <h5>{item.productOffer}</h5>
