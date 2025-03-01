@@ -21,7 +21,7 @@ const ProductInfo = () => {
         const id = params.id;
         try {
 
-            const response = await fetch(`http://localhost:5200/products/detail/${id}`)
+            const response = await fetch(`https://newstorebackend.vercel.app/products/detail/${id}`)
 
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
@@ -63,7 +63,7 @@ const ProductInfo = () => {
         console.log(productId)
 
         try {
-            let response = await fetch('http://localhost:5200/cart/add/'+productId, {credentials:"include"})
+            let response = await fetch('https://newstorebackend.vercel.app/cart/add/'+productId, {credentials:"include"})
                 
             if(response.ok){
                 alert("add to cart succesfullt")
@@ -98,15 +98,15 @@ const ProductInfo = () => {
             <div className="product-detail-page__img-info">
                 <div className="product-detail-page__image-collection">
                     <div className="product-detail-page__image-options">
-                        <img src={"http://localhost:5200/images/" + productImg[1]} onClick={() => chnageimg(1)} alt="" />
-                        <img src={"http://localhost:5200/images/" + productImg[2]} onClick={() => chnageimg(2)} alt="" />
-                        <img src={"http://localhost:5200/images/" + productImg[3]} onClick={() => chnageimg(3)} alt="" />
-                        <img src={"http://localhost:5200/images/" + productImg[0]} onClick={() => chnageimg(0)} alt="" />
+                        <img src={"https://newstorebackend.vercel.app/images/" + productImg[1]} onClick={() => chnageimg(1)} alt="" />
+                        <img src={"https://newstorebackend.vercel.app/images/" + productImg[2]} onClick={() => chnageimg(2)} alt="" />
+                        <img src={"https://newstorebackend.vercel.app/images/" + productImg[3]} onClick={() => chnageimg(3)} alt="" />
+                        <img src={"https://newstorebackend.vercel.app/images/" + productImg[0]} onClick={() => chnageimg(0)} alt="" />
 
                     </div>
                     <div className="product-detail-page__main-image">
                         <img
-                            src={`http://localhost:5200/images/${productImg[imgposition] || productImg[0]}`}
+                            src={`https://newstorebackend.vercel.app/images/${productImg[imgposition] || productImg[0]}`}
                             alt="Product"
                         />
 
@@ -179,8 +179,8 @@ const ProductInfo = () => {
             </div>
 
             <div className="product-detail-page__description">
-                <img src={"http://localhost:5200/images/" + productDescriptionImg[0]} alt="" />
-                <img src={"http://localhost:5200/images/" + productDescriptionImg[1]} alt="" />
+                <img src={"https://newstorebackend.vercel.app/images/" + productDescriptionImg[0]} alt="" />
+                <img src={"https://newstorebackend.vercel.app/images/" + productDescriptionImg[1]} alt="" />
             </div>
 
 
@@ -194,7 +194,7 @@ const ProductInfo = () => {
             <div key={item._id} className="similar-card-section">
               <Link to={"/productDetail/" + item._id}>
                 <img
-                  src={"http://localhost:5200/images/"+item.productImg[1]   }
+                  src={"https://newstorebackend.vercel.app/images/"+item.productImg[1]   }
                   alt="" style={{ marginTop:"3vw"}}
                 />
               </Link>

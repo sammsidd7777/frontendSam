@@ -12,7 +12,7 @@ const FindCollection = () => {
   // Fetch product data
   const fetchData = async () => {
     try {
-      let response = await fetch("http://localhost:5200/products/all");
+      let response = await fetch("https://newstorebackend.vercel.app/products/all");
       if (response.ok) {
         const result = await response.json();
         setData(result.message.product);
@@ -40,7 +40,7 @@ const FindCollection = () => {
     console.log("Product ID:", productId);
 
     try {
-      let response = await fetch(`http://localhost:5200/cart/add/${productId}`, { credentials: "include" });
+      let response = await fetch(`https://newstorebackend.vercel.app/cart/add/${productId}`, { credentials: "include" });
 
       if (response.ok) {
         alert("Added to cart successfully");
@@ -96,7 +96,7 @@ const FindCollection = () => {
             <div key={item._id || index} className='findCollection-card'>
               <div className='card-img'>
                 <img
-                  src={"http://localhost:5200/images/" + item.productImg[0]}
+                  src={"https://newstorebackend.vercel.app/images/" + item.productImg[0]}
                   alt={item.productName}
                 />
                 <h5>{item.productKeySpecfication}</h5>

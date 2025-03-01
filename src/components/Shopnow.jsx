@@ -14,7 +14,7 @@ const Shopnow = () => {
     // Fetch data from the server
     const fetchData = async () => {
       try {
-        let response = await fetch("http://localhost:5200/products/all");
+        let response = await fetch("https://newstorebackend.vercel.app/products/all");
   
         if (response.ok) {
           const data = await response.json();
@@ -42,7 +42,7 @@ const Shopnow = () => {
       console.log(productId,"pro")
   
       try {
-          let response = await fetch('http://localhost:5200/cart/add/'+productId, {credentials:"include"})
+          let response = await fetch('https://newstorebackend.vercel.app/cart/add/'+productId, {credentials:"include"})
               
           if(response.ok){
               alert("add to cart succesfullt")
@@ -114,7 +114,7 @@ const Shopnow = () => {
               <div key={index} className='findCollection-card'>
                 <div className='card-img'>
                 <img
-                  src={"http://localhost:5200/images/" + item.productImg[0]}
+                  src={"https://newstorebackend.vercel.app/images/" + item.productImg[0]}
                   alt=""
                 />
                 <h5>{item.productKeySpecfication}</h5>
@@ -149,7 +149,7 @@ const Shopnow = () => {
               <div key={index} className='findCollection-card'>
                 <div className='card-img'>
                 <img
-                  src={"http://localhost:5200/images/" + item.productImg[0]}
+                  src={"https://newstorebackend.vercel.app/images/" + item.productImg[0]}
                   alt=""
                 />
                 <h5>{item.productKeySpecfication}</h5>

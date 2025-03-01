@@ -36,7 +36,7 @@ const Navbar = () => {
     const userData = { name, email, phone, password };
 
     try {
-      let response = await fetch('http://localhost:5200/user/signup', {
+      let response = await fetch('https://newstorebackend.vercel.app/user/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ const Navbar = () => {
     const userData = { email, password };
 
     try {
-      let response = await fetch('http://localhost:5200/user/login', {
+      let response = await fetch('https://newstorebackend.vercel.app/user/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -100,7 +100,7 @@ const Navbar = () => {
 
 
     try {
-      let response = await fetch('http://localhost:5200/user/logout', { credentials: "include" })
+      let response = await fetch('https://newstorebackend.vercel.app/user/logout', { credentials: "include" })
 
       if (!response.ok) {
         throw new Error(error);
@@ -151,7 +151,7 @@ const Navbar = () => {
   const checkUserLogin = async () => {
     try {
       // Attempt to fetch user information
-      let response = await fetch("http://localhost:5200/user/current", { credentials: "include" })
+      let response = await fetch("https://newstorebackend.vercel.app/user/current", { credentials: "include" })
 
       if (response.ok) {
         // If successful, parse the response data
@@ -205,7 +205,7 @@ const Navbar = () => {
   const deleteItemformCard=async(item)=>{
    try {
     const id = item
-    let respone = await fetch("http://localhost:5200/cart/Deletecartitem/"+id,{credentials:"include"})
+    let respone = await fetch("https://newstorebackend.vercel.app/cart/Deletecartitem/"+id,{credentials:"include"})
     if(respone.ok){
       const data = await respone.json()
       console.log(data)
@@ -220,7 +220,7 @@ const Navbar = () => {
 
   async function getCartitem() {
         try {
-          let respone = await fetch("http://localhost:5200/cart/all",{credentials:"include"})
+          let respone = await fetch("https://newstorebackend.vercel.app/cart/all",{credentials:"include"})
           if(!respone.ok){
             throw new Error(error);
             
@@ -245,7 +245,7 @@ const Navbar = () => {
     const cartItemId = item;
     const quantity = quantitys;
 
-    let respone = await fetch("http://localhost:5200/cart/updateQuntity/"+cartItemId+"/"+quantity
+    let respone = await fetch("https://newstorebackend.vercel.app/cart/updateQuntity/"+cartItemId+"/"+quantity
     ,{credentials:"include"})
 
     if(!respone.ok){
@@ -332,7 +332,7 @@ const Navbar = () => {
         return(
           <div key={index} className='show-cart-card'>
             <img
-                            src={"http://localhost:5200/images/"+item.productImg}
+                            src={"https://newstorebackend.vercel.app/images/"+item.productImg}
                             alt=""
                         />
             <div className='show-cart-card-detail'><h4>{item.productTitle}</h4>

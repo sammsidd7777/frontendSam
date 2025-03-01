@@ -12,7 +12,7 @@ const SeachBaroption = () => {
   // setx(props);
   const fetchData = async () => {
     try {
-      let response = await fetch("http://localhost:5200/products/all");
+      let response = await fetch("https://newstorebackend.vercel.app/products/all");
 
       // Check if the response is OK (status code 200-299)
       if (response.ok) {
@@ -54,7 +54,7 @@ const SeachBaroption = () => {
             <div key={index} >
 
               <img
-                src={"http://localhost:5200/images/" + item.img[1]}
+                src={"https://newstorebackend.vercel.app/images/" + item.img[1]}
                 alt={item.cag}
               />
 

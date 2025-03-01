@@ -11,7 +11,7 @@ const Slider = () => {
     try {
 
 
-      let response = await fetch("http://localhost:5200/admin/slider",)
+      let response = await fetch("https://newstorebackend.vercel.app/admin/slider",)
       if (!response) {
         throw new Error(error);
       }
@@ -71,7 +71,7 @@ const Slider = () => {
 
     <div className='slider'>
 
-      <img src={"http://localhost:5200/images/" + data[count]} alt="" />
+      <img src={"https://newstorebackend.vercel.app/images/" + data[count]} alt="" />
       <button className='slider-botton-left' onClick={decrement}><i className="fa-solid fa-circle-arrow-left"></i></button>
 
       <button className='slider-botton' onClick={increment}><i class="fa-solid fa-circle-arrow-right"></i></button>
