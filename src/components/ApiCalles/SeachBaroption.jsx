@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 
 const SeachBaroption = () => {
-
+  const backendUrl = import.meta.env.VITE_BACKEND_PORT;
 
 
 
@@ -12,7 +12,7 @@ const SeachBaroption = () => {
   // setx(props);
   const fetchData = async () => {
     try {
-      let response = await fetch("https://newstorebackend.vercel.app/products/all");
+      let response = await fetch(`${backendUrl}/products/all`);
 
       // Check if the response is OK (status code 200-299)
       if (response.ok) {
@@ -48,13 +48,12 @@ const SeachBaroption = () => {
 
         category.map((item, index) => {
 
-          console.log(item)
 
           return (
             <div key={index} >
 
               <img
-                src={"https://newstorebackend.vercel.app/images/" + item.img[1]}
+                src={`${backendUrl}/images/`+ item.img[1]}
                 alt={item.cag}
               />
 

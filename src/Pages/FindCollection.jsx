@@ -1,18 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import Navbar from './Navbar';
+import Navbar from '../components/smallComponents/Navbar';
 import { useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { updateCartCount } from "../redux/feature/cart/cartSlice";
+
 
 const FindCollection = () => {
+  const backendUrl = import.meta.env.VITE_BACKEND_PORT;
   const [data, setData] = useState([]);
   const [discount, setDiscount] = useState(0);
   const [value, setValue] = useState(3000); // Price range state
   const [filterOpen, setFilterOpen] = useState(false);
   const { id } = useParams(); // Get the category ID from URL params
+  const dispatch = useDispatch()
 
   // Fetch product data
   const fetchData = async () => {
     try {
-      let response = await fetch("https://newstorebackend.vercel.app/products/all");
+      let response = await fetch(`${backendUrl}/products/all`);
       if (response.ok) {
         const result = await response.json();
         setData(result.message.product);
@@ -38,9 +43,10 @@ const FindCollection = () => {
   // Handle Add to Cart functionality
   const AddtoCardhandle = async (productId) => {
     console.log("Product ID:", productId);
+    dispatch(updateCartCount());
 
     try {
-      let response = await fetch(`https://newstorebackend.vercel.app/cart/add/${productId}`, { credentials: "include" });
+      let response = await fetch(`${backendUrl}/cart/add/${productId}`, { credentials: "include" });
 
       if (response.ok) {
         alert("Added to cart successfully");
@@ -91,12 +97,12 @@ const FindCollection = () => {
       {/* Product Section */}
       <div className='findcollection-section'>
         {data
-          .filter(item => item.productCategory == id ) // Filter by category and price
+          .filter(item => item.productCategory == id) // Filter by category and price
           .map((item, index) => (
             <div key={item._id || index} className='findCollection-card'>
               <div className='card-img'>
                 <img
-                  src={"https://newstorebackend.vercel.app/images/" + item.productImg[0]}
+                  src={`${backendUrl}/images/` + item.productImg[0]}
                   alt={item.productName}
                 />
                 <h5>{item.productKeySpecfication}</h5>

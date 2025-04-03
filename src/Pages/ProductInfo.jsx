@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 
 import { Link, useParams } from 'react-router-dom';
-import Navbar from './Navbar';
+import Navbar from '../components/smallComponents/Navbar';
 
 const ProductInfo = () => {
+    const backendUrl = import.meta.env.VITE_BACKEND_PORT;
 
     const [productName, setProductname] = useState('') // Initialize with empty string instead of array
     const [productCategory, setProductCategory] = useState('')
@@ -21,7 +22,7 @@ const ProductInfo = () => {
         const id = params.id;
         try {
 
-            const response = await fetch(`https://newstorebackend.vercel.app/products/detail/${id}`)
+            const response = await fetch(`${backendUrl}/products/detail/${id}`)
 
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
@@ -63,7 +64,7 @@ const ProductInfo = () => {
         console.log(productId)
 
         try {
-            let response = await fetch('https://newstorebackend.vercel.app/cart/add/'+productId, {credentials:"include"})
+            let response = await fetch(`${backendUrl}/cart/add/`+productId, {credentials:"include"})
                 
             if(response.ok){
                 alert("add to cart succesfullt")
@@ -89,7 +90,7 @@ const ProductInfo = () => {
 
     useEffect(() => {
         fetchData();
-    }, [Link]);
+    }, []);
 
     return (
         <div className="product-detail-page">
@@ -98,15 +99,15 @@ const ProductInfo = () => {
             <div className="product-detail-page__img-info">
                 <div className="product-detail-page__image-collection">
                     <div className="product-detail-page__image-options">
-                        <img src={"https://newstorebackend.vercel.app/images/" + productImg[1]} onClick={() => chnageimg(1)} alt="" />
-                        <img src={"https://newstorebackend.vercel.app/images/" + productImg[2]} onClick={() => chnageimg(2)} alt="" />
-                        <img src={"https://newstorebackend.vercel.app/images/" + productImg[3]} onClick={() => chnageimg(3)} alt="" />
-                        <img src={"https://newstorebackend.vercel.app/images/" + productImg[0]} onClick={() => chnageimg(0)} alt="" />
+                        <img src={`${backendUrl}/images/` + productImg[1]} onClick={() => chnageimg(1)} alt="" />
+                        <img src={`${backendUrl}/images/` + productImg[2]} onClick={() => chnageimg(2)} alt="" />
+                        <img src={`${backendUrl}/images/` + productImg[3]} onClick={() => chnageimg(3)} alt="" />
+                        <img src={`${backendUrl}/images/` + productImg[0]} onClick={() => chnageimg(0)} alt="" />
 
                     </div>
                     <div className="product-detail-page__main-image">
                         <img
-                            src={`https://newstorebackend.vercel.app/images/${productImg[imgposition] || productImg[0]}`}
+                            src={`${backendUrl}/images/${productImg[imgposition] || productImg[0]}`}
                             alt="Product"
                         />
 
@@ -179,8 +180,8 @@ const ProductInfo = () => {
             </div>
 
             <div className="product-detail-page__description">
-                <img src={"https://newstorebackend.vercel.app/images/" + productDescriptionImg[0]} alt="" />
-                <img src={"https://newstorebackend.vercel.app/images/" + productDescriptionImg[1]} alt="" />
+                <img src={`${backendUrl}/images/` + productDescriptionImg[0]} alt="" />
+                <img src={`${backendUrl}/images/` + productDescriptionImg[1]} alt="" />
             </div>
 
 
@@ -194,7 +195,7 @@ const ProductInfo = () => {
             <div key={item._id} className="similar-card-section">
               <Link to={"/productDetail/" + item._id}>
                 <img
-                  src={"https://newstorebackend.vercel.app/images/"+item.productImg[1]   }
+                  src={`${backendUrl}/images/`+item.productImg[1]   }
                   alt="" style={{ marginTop:"3vw"}}
                 />
               </Link>
