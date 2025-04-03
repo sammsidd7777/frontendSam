@@ -1,3 +1,6 @@
+
+
+
 *{
     padding: 0%;
     margin: 0;
@@ -31,12 +34,12 @@ body{
     justify-content: center;
     text-transform: capitalize;
     height: 2.5vw;
-    background-color: rgb(239 244 247);
+  background-color: rgba(232, 228, 228, 0.763);
     font-size: 1vw;
 }
 
 .Navbar header{
-    width: 93.9%;
+    width: 96.9%;
     display: grid;
     justify-content: space-around;
     height: 5vw;
@@ -45,7 +48,7 @@ body{
   
     font-size: 1.2vw;
     text-transform: capitalize;
-    grid-template-columns: auto auto auto auto auto auto auto auto auto;
+    grid-template-columns: auto auto auto auto auto auto auto  ;
 }
 .Navbar header img{
     height: 3vw;
@@ -63,15 +66,16 @@ body{
 
 }
 .Navbar header div input{
-    width: 22vw;
+    width: 29vw;
     padding: 0vw 2vw;
     font-size: 1.2vw;
-    color: white;
+    
     height: 3vw;
-    background-color: rgb(241, 254, 254);
+    background-color: rgb(202, 199, 199);
     border: none;
     border-radius: 20px;
     border-bottom: 0.1px solid rgb(202, 199, 199);
+ color: black;
     
 }
 .Navbar header div{
@@ -167,7 +171,7 @@ body{
 .seach-bar-options div{
     display: flex;
     width: 10vw;
-    justify-content:;
+    /* justify-content:; */
     align-items: center;
     gap: 0.5vw;
 }
@@ -205,7 +209,6 @@ body{
 .cart-popup-section{
    width: 30vw;
    height: 100vh;
-   /* overflow: scroll; */
   
    display: flex;
    flex-direction: column;
@@ -219,7 +222,12 @@ body{
    background-color: rgb(249, 246, 246);
 
 }
-.cart-popup-header{
+
+.cart-popup-section img{
+    height: 2vw;
+    width: 2vw;
+}
+/* .cart-popup-header{
     display: flex;
     flex-direction: column;
     gap: 1.5vw;
@@ -238,14 +246,14 @@ body{
     border-top: 0.2vh solid rgb(212, 209, 209);
     /* background-color: white; */
    
-    display: flex;
+    /* display: flex;
     align-items: center;
     justify-content: center;
     gap: 8vw;
     
     text-transform: capitalize;
-}
-.show-cart-card-price div{
+} */
+/* .show-cart-card-price div{
    display: flex;
    flex-direction: column;
 
@@ -268,8 +276,8 @@ body{
     color: white;
     border: none;
     border-radius: 15px;
-}
-
+} */
+/* 
 .cart-popup-section .cart-popup-header header{
     width: 28vw;
     padding:  1vw;
@@ -293,9 +301,9 @@ body{
     z-index: 5;
     position: fixed;
     top:"12vw"
-}
+} */
 
-#sam{
+/* #sam{
      overflow: scroll;
     width: 30vw;
     height: 42.5vw;
@@ -313,12 +321,12 @@ body{
 }
 #sam::-webkit-scrollbar {
     display: none;
-  }
+  } */
 
 
  
-.show-cart-card{
-    /* display: none; */
+/* .show-cart-card{
+
     display: grid;
     grid-template-columns: auto auto auto;
     height: 8.5vw;
@@ -329,8 +337,8 @@ body{
     border-radius: 15px;
     margin:0vw 0.5vw;
     padding: 0vw 0.5vw;
-}
-.show-cart-card img{
+} */
+/* .show-cart-card img{
     height: 8vw;
     width: 8vw;
     margin-left: 0.3vw;
@@ -356,8 +364,8 @@ body{
     color: rgb(0, 27, 0);
     display: flex;
     gap: 1vw;
-}
-.show-cart-card-detail h5 del{
+} */
+/* .show-cart-card-detail h5 del{
     font-size: 1vw;
     color: rgb(121, 3, 7);
     display: flex;
@@ -370,8 +378,8 @@ body{
     width: 4.5vw;align-items: end;
     gap: 4vw;
     /* margin: 1vw 1vw; */
-}
-.show-card-min-max-button div{
+/* } */
+/* .show-card-min-max-button div{
     width: 100%;
    display: flex;
    justify-content: space-between;
@@ -381,60 +389,76 @@ body{
    overflow: hidden;
    background-color: white;
 
-}
+} */ */
 
-.show-card-min-max-button div i{
+/* .show-card-min-max-button div i{
     font-size: 0.8vw;
     /* border:0.1vh solid black */
-    ;height: 100%;
+    /* ;height: 100%;
     align-items: center;
     display: grid;
     place-content: center;
     padding: 0vw 0.4vw;
     background-color: gray;
-}
+}  */
 /* navbar login */
-.login-wrapper{
-    height: fit-content;
-    position: fixed;
-    width: 15vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5vw 0vw;
-background-color: white;
-    top: 7vw;
-    right: 2vw;
-    z-index: 2;
-    border-radius: 5px;
-    border: 0.1vh solid rgb(210, 210, 210);
-    text-transform: capitalize;
-    gap: 0.5vw;
+.islogIn{
+ 
+ 
+  height: 15vw;
+  width: 20vw;
+  z-index: 5;
+  position: fixed;
+  top: 5vw;
+  background-color: red;
+  color: aqua;
+
 
 }
-.login-wrapper h2{
+.logigdata{
+    height: 15vw;
+    display: grid;
+    /* gap: 2vw; */
+    width: 15vw;
+    justify-content: center;
+    padding: 1vw ;
+   
+    backdrop-filter: blur(11px) saturate(180%);
+    -webkit-backdrop-filter: blur(11px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+    align-items: center;
+    position: fixed;
+    top: 8vw;
+    right: 7vw;
+}
+
+
+.logigdata h2{
     font-size: 1.2vw;
 
-align-items: center; width: 13vw;
+align-items: center; width: 15;
 display: flex;
 justify-content: space-between;
 }
 
-.login-wrapper p{
+.logigdata p{
     font-size: 1vw;
-    width: 85%;
+    width: 15vw ;
     text-align: center;
     border-bottom: 0.1px   solid gray;
     border-top: 0.1px   solid gray;
     padding: 1vw 0vw;
-    margin: 0.5vw 0vw;
+    /* margin: 5vw 0vw; */
+   
 }
-.login-wrapper button{
+.logigdata button{
    padding: 0.5vw 0vw;
-   width: 12vw;
+   width: 15vw;
    background-color: black;
-   color: white;
+   font-weight: 600;
+   color: rgb(61, 208, 12);
    border-radius: 7px;
 }
 
@@ -589,9 +613,9 @@ justify-content: space-between;
 .live-sell-section{
     width: 100%;
     display: flex;
-    /* height: 40vh; */
+  height: fit-content;
     flex-direction: column;
-    gap: 2vw;
+    gap: 3vw;
     align-items: center;
 }
 .live-sell-section h1{
@@ -634,12 +658,12 @@ justify-content: space-between;
 .all-offer{
     width: 99%;
     display: flex;
-    padding-left:1vw ;
     gap: 1vw;
 justify-content: start;
 font-size: 1vw;
-margin-top: 1.5vw;
-padding-left: 2vw;
+/* margin-top: 10vw; */
+width: 90%;
+justify-content: space-between;
 }
 .all-offer p{
     font-size: 1.1vw;
@@ -1410,4 +1434,233 @@ justify-content: center;
     display: grid;
     grid-template-columns: auto auto;
     column-gap: 2.5vw;
+}
+
+
+.myprofile-page{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .myprofile-sections{
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10vw;
+    gap: 3vw;
+    text-transform: capitalize;
+  }
+
+.myprofile-first-section{display: flex;font-size: 0.7vw;gap: 1vw;}
+
+.myprofile-second{
+    display: flex;
+    flex-direction: column;
+    padding: 1.5vw 0vw;
+    border-radius: 24px;
+    gap: 2vw;
+    border: 0.1vh dotted gray;
+    /* font-size: 1.9vw; */
+    
+}
+.myprofile-second hr{
+    /* height: 0.1vw; */
+    width: 100%;
+    border-top: 0.1vh dotted gray;
+}
+
+.myprofile-second div{
+    display: flex;
+    margin: 0vw  2vw;
+    gap: 0.vw;
+    font-size: 1vw;
+}
+.myprofile-second div div{
+    display: flex;
+    font-size: 1vw;
+    flex-direction: column;
+}
+.myprofile-second img{
+    height: 2.5vw ;
+    margin-right:0vw ;
+}
+
+.myprofile-second button{
+    margin-right: 1.5vw;
+    border: 0.1vh;
+    padding: 0.3vw 0.25vw;
+    background-color: white;
+}
+
+.myprofile-thrresection{
+    display: grid;
+    grid-template-columns: auto auto ;
+    border: 0.1vh dotted gray;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 1vw 0vw;
+    font-size: 1vw;
+    border-radius: 24px;
+
+}
+.myprofile-thrresection div{
+    border-radius: 16px ;
+    border: 0.1vh dotted gray;
+    padding: 2vw 2.5vw;
+    display: flex;
+    align-items: center;
+}
+
+.myprofile-fourth{
+    width: 100%;
+    border-radius: 24px;
+    border:0.1vh  dotted gray;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2vw;
+}
+
+.myprofile-fourth h1{
+    padding: 2vw 2vw 0vw;
+    font-size: 2vw;
+}
+
+.myprofile-fourth div{
+    
+    padding: 1vw 1.5vw;
+    display: flex;
+    justify-content: space-between;
+   
+
+
+
+
+}
+
+.log-out-button{
+    width: 100%;
+    padding: 1.5vw;
+    color: red;
+    font-family: 2.5vw;
+    background-color: rgb(6, 0, 0);
+    border-radius: 20px;
+    border: none;
+    text-align: start;
+    font-size: 1.2vw;
+    align-items: center;
+    display: flex;gap: 1vw;
+    
+}
+.myprofile-fourth div span{
+    font-size: 1.2vw;
+    display: flex;
+    gap: 1vw;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+
+/* Addess-from */
+.Addess-from{
+    height: 75vh;
+    width: 25vw;
+    display: flex
+;
+flex-direction: column;
+gap: 2vw;
+backdrop-filter: blur(11px) saturate(180%);
+-webkit-backdrop-filter: blur(11px) saturate(180%);
+background-color: rgba(231, 225, 225, 0.75);
+border-radius: 12px;
+border: 1px solid rgba(209, 213, 219, 0.3);
+
+position: fixed;
+
+top: 9vw;
+right: 1vw;
+
+
+
+
+}
+
+.Addess-from h1{
+    font-size: 1.5vw;
+   /* text-align: center; */
+   padding: 1vw 0vw 1vw 1vw;
+   display: flex;
+
+   align-items: center;
+   gap: 1vw;
+   
+}
+
+.Addess-from form{
+    height: 60vh;
+    width: 100%;
+   display: flex;
+   flex-direction: column;
+    justify-content: space-between;
+    align-items:center ;
+    font-size: 1.2vw;
+}
+
+.Addess-from form input{
+    padding: 1.2vw;
+    width: 100%;
+    border-radius: 15px;
+    width: 20vw;
+    border: 0.1vh dotted gray;
+}
+
+.Addess-from form div {
+    display: grid;
+    grid-template-columns: auto auto ;
+    justify-content: space-between;
+    width: 22.4vw;
+}
+
+.Addess-from form div input{
+    width: 10vw;
+  
+}
+
+
+.Addess-from form div select{
+    width: 9vw;
+    padding: 1.2vw 0.2vw ;
+    border-radius: 15px;
+    border: 0.1vh dotted gray;
+}
+
+.Addess-from form div button{
+    padding: 1vw 3.5vw;
+    background-color:white;
+    border-radius: 10px;
+    border: 0.2vh solid black;
+    font-weight: 550;
+
+}
+
+.Addess-from form div button:hover{
+    background-color: black;
+    color: white;
+    font-weight: 550;
+}
+.Addess-from form div button:nth-child(2){
+    background-color: black;
+    color: white;
+    font-weight: 550;
+}
+
+.Addess-from form div button:nth-child(2):hover{
+    background-color:white;
+    color: rgb(244, 7, 7);
+    border: 0.2vh solid black;
 }

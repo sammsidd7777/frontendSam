@@ -1,12 +1,15 @@
 
-import Home from "./components/Home";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./Pages/Home";
+import Shopnow from "./Pages/Shopnow";
+import ProductInfo from "./Pages/ProductInfo";
+import FindCollection from "./Pages/FindCollection";
+import MyAccount from "./Pages/MyAccount";
 
 
 
-import ProductInfo from "./components/ProductInfo";
-import Shopnow from "./components/Shopnow";
-import FindCollection from "./components/FindCollection";
+
+
 
 
 const App = () => {
@@ -16,6 +19,7 @@ const App = () => {
       {path:"/findCollection", element: <Shopnow />},
       {path:"/productDetail/:id",element: <ProductInfo  />},
       {path:"/findCollection/:id",element: <FindCollection  />}
+      ,{path:"/profile", element: <MyAccount />}
     
     
  

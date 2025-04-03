@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar'
 
+
 const Slider = () => {
+  const backendUrl = import.meta.env.VITE_BACKEND_PORT;
+
+
 
   const [data, setData] = useState([])
   const [count, setCount] = useState(0)
@@ -11,21 +15,22 @@ const Slider = () => {
     try {
 
 
-      let response = await fetch("https://newstorebackend.vercel.app/admin/slider",)
+      let response = await fetch(`${backendUrl}/admin/slider`);
+
       if (!response) {
         throw new Error(error);
       }
 
-      const sam = await response.json()
+      response= await response.json()
 
 
 
-      setData(sam.message[0].Sliderimage)
+      setData(response.message[0].Sliderimage)
 
 
     } catch (error) {
 
-      // console.log(error.message)
+      console.log(error.message)
     }
 
 
@@ -71,10 +76,10 @@ const Slider = () => {
 
     <div className='slider'>
 
-      <img src={"https://newstorebackend.vercel.app/images/" + data[count]} alt="" />
+      <img src={`${backendUrl}/images/` + data[count]} alt="" />
       <button className='slider-botton-left' onClick={decrement}><i className="fa-solid fa-circle-arrow-left"></i></button>
 
-      <button className='slider-botton' onClick={increment}><i class="fa-solid fa-circle-arrow-right"></i></button>
+      <button className='slider-botton' onClick={increment}><i className="fa-solid fa-circle-arrow-right"></i></button>
 
 
       <div className='options'>

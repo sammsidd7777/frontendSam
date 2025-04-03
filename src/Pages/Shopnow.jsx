@@ -1,8 +1,12 @@
 import React, { useState,useEffect } from 'react'
-import Navbar from './Navbar';
+import Navbar from '../components/smallComponents/Navbar';
+import Footer from '../components/smallComponents/Footer';
 
 
 const Shopnow = () => {
+
+  const backendUrl = import.meta.env.VITE_BACKEND_PORT;
+
 
     const [data, setData] = useState([]);
   const [value, setValue] = useState("3000");
@@ -14,7 +18,7 @@ const Shopnow = () => {
     // Fetch data from the server
     const fetchData = async () => {
       try {
-        let response = await fetch("https://newstorebackend.vercel.app/products/all");
+        let response = await fetch(`${backendUrl}/products/all`);
   
         if (response.ok) {
           const data = await response.json();
@@ -42,7 +46,7 @@ const Shopnow = () => {
       console.log(productId,"pro")
   
       try {
-          let response = await fetch('https://newstorebackend.vercel.app/cart/add/'+productId, {credentials:"include"})
+          let response = await fetch('${backendUrl}/cart/add/'+productId, {credentials:"include"})
               
           if(response.ok){
               alert("add to cart succesfullt")
@@ -114,7 +118,7 @@ const Shopnow = () => {
               <div key={index} className='findCollection-card'>
                 <div className='card-img'>
                 <img
-                  src={"https://newstorebackend.vercel.app/images/" + item.productImg[0]}
+                  src={`${backendUrl}/images/` + item.productImg[0]}
                   alt=""
                 />
                 <h5>{item.productKeySpecfication}</h5>
@@ -149,7 +153,7 @@ const Shopnow = () => {
               <div key={index} className='findCollection-card'>
                 <div className='card-img'>
                 <img
-                  src={"https://newstorebackend.vercel.app/images/" + item.productImg[0]}
+                  src={`${backendUrl}/images/` + item.productImg[0]}
                   alt=""
                 />
                 <h5>{item.productKeySpecfication}</h5>
@@ -174,7 +178,9 @@ const Shopnow = () => {
           
         }
         </div>
+        <Footer />
       </div>
+
   )
 }
 
